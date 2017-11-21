@@ -38,27 +38,6 @@
   </entry>
   
   <entry>
-    <title>02_Kotlin基础知识</title>
-    <link href="http://qdafengzi.github.io/2017/11/20/02.Kotlin%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
-    <id>http://qdafengzi.github.io/2017/11/20/02.Kotlin基础知识/</id>
-    <published>2017-11-20T14:32:53.000Z</published>
-    <updated>2017-11-20T16:31:48.645Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="Kotlin基础知识"><a href="#Kotlin基础知识" class="headerlink" title="Kotlin基础知识"></a>Kotlin基础知识</h3><p>1.定义变量和常量<br>​<br>    变量var<br>    var n:Int = 30<br>    var ok:Int<br>    var abc = 124<br>    var s = “abc”</p><pre><code>常量val        val m:Int = 124位置不同：在Kotlin中数据类型放到变量后面，并用:分割变量用var 常量用valKotlin内置类型首字母都是大写的Kotlin可以根据右侧初始化的值自动推导数据类型，初始化可以不写数据类型</code></pre><p>2.定义函数<br>​<br>    函数头，主要包括函数名和标识函数的关键字<br>    参数，包括参数名和参数类型<br>    返回值，包括返回值的类型，如果没有返回值</p><pre><code>有返回值fun add(m:Int,n:Int):Int{    return m + n}无返回值fun process(m:Int):Unit{    println(m)}无返回值fun process(m:Int){    println(m)}</code></pre><p>3.注释</p><pre><code>和Java区别是多行注释可以嵌套</code></pre><p>4.数据类型<br>​<br>    数据类型   占用字节数<br>    Double            8<br>    Float          4<br>    Long              8<br>    Int                4<br>    Short          2<br>    Byte            1</p><pre><code>不能像Java一样自动转换要用toByte toShort toInt等方法表示Long，数值后面加l或L，123L表示Float，数值后面加f或F，123.3F目前Kotlin只支持十六进制和二进制十六进制用0x开头，0x1E二进制：数值用0b开头，0b10011下划线_分隔符把数值分开val oneMillion = 1_000_000</code></pre><p>5.字符类型<br>​<br>    Char表示<br>    如果c和97比较必须c.toInt之后才可以比较</p><p>6.布尔类型<br>​<br>    Boolean<br>7.数组<br>​<br>    arrayOf可以存储任何值的数组<br>    val arr = arrayOf(1,2,3,’a’,”adsa”,true)<br>    超过范围就会索引越界和Java一样</p><pre><code>arrayOfNulls直接定义一个长度为10的整型数组val arr1 = arrayOfNulls&lt;Int&gt;(10)没初始化默认为null，因为是对象使用Array类构造数组长度和初始化数据方法var arr3 = Array(10,{i -&gt; (i*i).toString()})intArrayOf、shortArrayOf等var arr4: IntArray = intArrayOf(10,20,30)</code></pre><p>8.字符串</p><pre><code>普通字符串和Java一样保留原始格式的字符串(raw string)var s1 = &quot;&quot;&quot;    hello            world    时间“”“字符串模版（占位符）val i = 10val s2 = &quot;i = $i&quot;</code></pre><p>9.包(Package)</p><pre><code>Java 包与目录有关Test.javapackage a.b;Kotlin 与当前目录无关他可以给包取别名import baidu.com.MyClass as my</code></pre><p>10.条件语句when<br>​<br>    类似Java的switch<br>    x = 1<br>    when(x){<br>        1-&gt;{<br>            println(“1—-“)<br>        }</p><pre><code>    2-&gt;{        println(&quot;2-----&quot;)    }    else{        println(&quot;其他&quot;)    }}    如果是对应的多个值var y = 1when(y){    1,2,3,4,5-&gt;{        println(&quot;以下符合条件&quot;)    }    10-&gt;{        println(&quot;以下不符合条件&quot;)    }    else{        println(&quot;其他&quot;)    }}when作为表达式使用var xyz = 1var m = when(xyz){    1-&gt;{        println(&quot;xyz==1&quot;)        20    }    2-&gt;{        println(&quot;xyz==2&quot;)        40    }    else{        100    }}使用in关键字var n = 20when(n){    in 1..15-&gt;print(&quot;满足条件&quot;)    in 16..20-&gt;println(“不满足条件”)    !in 100..200-&gt;println(&quot;hello world&quot;)    else-&gt;println(&quot;条件未知&quot;)}分支条件是一个函数fun double(x:Int):Int{    return x * x}var ok = 9when(ok){    double(2)-&gt;println(&quot;不满足条件&quot;)    double(3)-&gt;println(&quot;满足条件&quot;)    else-&gt;println(&quot;条件未知&quot;)}</code></pre><p>11.循环语句中的for<br>​<br>    var arr = intArrayOf(1,2,3,4,5)<br>    for(item: Int in arr){<br>        println(item)<br>    }    </p><pre><code>for(i in arr.indices){    println(&quot;arr[$i] = &quot; + arr[i])}for((index, value) in arr.withIndex()){    println(&quot;arr[$index] = &quot; + value)}</code></pre><p>12.循环语句while</p><pre><code>var i = 0while(i++ &lt; 10){    println(i)}do{    if(i==8){        continue    }    println(i)    if(i == 6){        break    }}while(--i &gt; 0)</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;Kotlin基础知识&quot;&gt;&lt;a href=&quot;#Kotlin基础知识&quot; class=&quot;headerlink&quot; title=&quot;Kotlin基础知识&quot;&gt;&lt;/a&gt;Kotlin基础知识&lt;/h3&gt;&lt;p&gt;1.定义变量和常量&lt;br&gt;​&lt;br&gt;    变量var&lt;br&gt;    var
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>01_Kotlin类和接口</title>
     <link href="http://qdafengzi.github.io/2017/11/20/03.%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3/"/>
     <id>http://qdafengzi.github.io/2017/11/20/03.类和接口/</id>
@@ -74,6 +53,27 @@
         &lt;h2 id=&quot;类和接口&quot;&gt;&lt;a href=&quot;#类和接口&quot; class=&quot;headerlink&quot; title=&quot;类和接口&quot;&gt;&lt;/a&gt;类和接口&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;1.类的声明&lt;/strong&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;class MyClass{}
 &lt;/code&gt;
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>02_Kotlin基础知识</title>
+    <link href="http://qdafengzi.github.io/2017/11/20/02.Kotlin%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    <id>http://qdafengzi.github.io/2017/11/20/02.Kotlin基础知识/</id>
+    <published>2017-11-20T14:32:53.000Z</published>
+    <updated>2017-11-20T16:31:48.645Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Kotlin基础知识"><a href="#Kotlin基础知识" class="headerlink" title="Kotlin基础知识"></a>Kotlin基础知识</h3><p>1.定义变量和常量<br>​<br>    变量var<br>    var n:Int = 30<br>    var ok:Int<br>    var abc = 124<br>    var s = “abc”</p><pre><code>常量val        val m:Int = 124位置不同：在Kotlin中数据类型放到变量后面，并用:分割变量用var 常量用valKotlin内置类型首字母都是大写的Kotlin可以根据右侧初始化的值自动推导数据类型，初始化可以不写数据类型</code></pre><p>2.定义函数<br>​<br>    函数头，主要包括函数名和标识函数的关键字<br>    参数，包括参数名和参数类型<br>    返回值，包括返回值的类型，如果没有返回值</p><pre><code>有返回值fun add(m:Int,n:Int):Int{    return m + n}无返回值fun process(m:Int):Unit{    println(m)}无返回值fun process(m:Int){    println(m)}</code></pre><p>3.注释</p><pre><code>和Java区别是多行注释可以嵌套</code></pre><p>4.数据类型<br>​<br>    数据类型   占用字节数<br>    Double            8<br>    Float          4<br>    Long              8<br>    Int                4<br>    Short          2<br>    Byte            1</p><pre><code>不能像Java一样自动转换要用toByte toShort toInt等方法表示Long，数值后面加l或L，123L表示Float，数值后面加f或F，123.3F目前Kotlin只支持十六进制和二进制十六进制用0x开头，0x1E二进制：数值用0b开头，0b10011下划线_分隔符把数值分开val oneMillion = 1_000_000</code></pre><p>5.字符类型<br>​<br>    Char表示<br>    如果c和97比较必须c.toInt之后才可以比较</p><p>6.布尔类型<br>​<br>    Boolean<br>7.数组<br>​<br>    arrayOf可以存储任何值的数组<br>    val arr = arrayOf(1,2,3,’a’,”adsa”,true)<br>    超过范围就会索引越界和Java一样</p><pre><code>arrayOfNulls直接定义一个长度为10的整型数组val arr1 = arrayOfNulls&lt;Int&gt;(10)没初始化默认为null，因为是对象使用Array类构造数组长度和初始化数据方法var arr3 = Array(10,{i -&gt; (i*i).toString()})intArrayOf、shortArrayOf等var arr4: IntArray = intArrayOf(10,20,30)</code></pre><p>8.字符串</p><pre><code>普通字符串和Java一样保留原始格式的字符串(raw string)var s1 = &quot;&quot;&quot;    hello            world    时间“”“字符串模版（占位符）val i = 10val s2 = &quot;i = $i&quot;</code></pre><p>9.包(Package)</p><pre><code>Java 包与目录有关Test.javapackage a.b;Kotlin 与当前目录无关他可以给包取别名import baidu.com.MyClass as my</code></pre><p>10.条件语句when<br>​<br>    类似Java的switch<br>    x = 1<br>    when(x){<br>        1-&gt;{<br>            println(“1—-“)<br>        }</p><pre><code>    2-&gt;{        println(&quot;2-----&quot;)    }    else{        println(&quot;其他&quot;)    }}    如果是对应的多个值var y = 1when(y){    1,2,3,4,5-&gt;{        println(&quot;以下符合条件&quot;)    }    10-&gt;{        println(&quot;以下不符合条件&quot;)    }    else{        println(&quot;其他&quot;)    }}when作为表达式使用var xyz = 1var m = when(xyz){    1-&gt;{        println(&quot;xyz==1&quot;)        20    }    2-&gt;{        println(&quot;xyz==2&quot;)        40    }    else{        100    }}使用in关键字var n = 20when(n){    in 1..15-&gt;print(&quot;满足条件&quot;)    in 16..20-&gt;println(“不满足条件”)    !in 100..200-&gt;println(&quot;hello world&quot;)    else-&gt;println(&quot;条件未知&quot;)}分支条件是一个函数fun double(x:Int):Int{    return x * x}var ok = 9when(ok){    double(2)-&gt;println(&quot;不满足条件&quot;)    double(3)-&gt;println(&quot;满足条件&quot;)    else-&gt;println(&quot;条件未知&quot;)}</code></pre><p>11.循环语句中的for<br>​<br>    var arr = intArrayOf(1,2,3,4,5)<br>    for(item: Int in arr){<br>        println(item)<br>    }    </p><pre><code>for(i in arr.indices){    println(&quot;arr[$i] = &quot; + arr[i])}for((index, value) in arr.withIndex()){    println(&quot;arr[$index] = &quot; + value)}</code></pre><p>12.循环语句while</p><pre><code>var i = 0while(i++ &lt; 10){    println(i)}do{    if(i==8){        continue    }    println(i)    if(i == 6){        break    }}while(--i &gt; 0)</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;Kotlin基础知识&quot;&gt;&lt;a href=&quot;#Kotlin基础知识&quot; class=&quot;headerlink&quot; title=&quot;Kotlin基础知识&quot;&gt;&lt;/a&gt;Kotlin基础知识&lt;/h3&gt;&lt;p&gt;1.定义变量和常量&lt;br&gt;​&lt;br&gt;    变量var&lt;br&gt;    var
       
     
     </summary>
@@ -131,31 +131,6 @@ python2 和 Python3的区别是前者不支持中文，后者支持和中文
   </entry>
   
   <entry>
-    <title>微信小程序</title>
-    <link href="http://qdafengzi.github.io/2017/11/20/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
-    <id>http://qdafengzi.github.io/2017/11/20/微信小程序/</id>
-    <published>2017-11-20T14:32:53.000Z</published>
-    <updated>2017-11-20T16:30:32.072Z</updated>
-    
-    <content type="html"><![CDATA[<p><strong>1.分辨率问题</strong><br>​    </p><pre><code>以iP6的物理像素750*1334为设计稿进行设计iPhone6下1px = 1rpxiPhone6 plus 下 1px = 0.6rpx</code></pre><p><strong>2.页面之间的跳转</strong><br>​<br>    //会跳转并且可以返回父页面，会执行onHide生命周期<br>    wx.navigateTo({<br>        url:”../posts/post”<br>    });</p><pre><code>//跳转后不可以返回父页面，会执行onUnLoad生命周期wx.redirectTo({    url:&quot;../posts/post&quot;})</code></pre><p><strong>3.点击事件</strong><br>​<br>    //点击子节点，子父节点都会相应事件<br>    <view class="moto-container" bindtap="onTap"><br>    <text class="moto" bindtap="onSubTap">开启撸猫之旅</text><br>    </view><br>    //点击子节点，只有子节点会有相应<br>    <view class="moto-container" bindtap="onTap"><br>    <text class="moto" catchtap="onSubTap">开启撸猫之旅</text><br>    </view></p><p><strong>4..js文件data文件执行该过程</strong><br>​<br>        小程序总是会读取data对象来做数据绑定，是在onLoad事件执行之后发生的。</p><p><strong>5.缓存的处理(不能超过10M)</strong><br>​<br>    wx.setStorageSync(“key”,”value”)</p><pre><code>wx.getStorageSync(&quot;key&quot;)wx.removeStorageSync(&quot;key&quot;)wx.clearStorageSync();</code></pre><p>​<br>​<br>​<br>​<br>​<br>​<br>​<br>​<br>​<br>​<br>​<br>​<br>​<br>​<br>​<br>​<br>​<br>​    </p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;strong&gt;1.分辨率问题&lt;/strong&gt;&lt;br&gt;​    &lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;以iP6的物理像素750*1334为设计稿进行设计
-iPhone6下1px = 1rpx
-iPhone6 plus 下 1px = 0.6rpx
-&lt;/code&gt;&lt;/pre&gt;&lt;p
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>安卓知识回顾</title>
     <link href="http://qdafengzi.github.io/2017/11/20/%E5%AE%89%E5%8D%93%E7%9F%A5%E8%AF%86%E5%9B%9E%E9%A1%BE/"/>
     <id>http://qdafengzi.github.io/2017/11/20/安卓知识回顾/</id>
@@ -173,6 +148,31 @@ iPhone6 plus 下 1px = 0.6rpx
 String versionName;
 // 获取包管理器
 PackageMana
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>微信小程序</title>
+    <link href="http://qdafengzi.github.io/2017/11/20/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    <id>http://qdafengzi.github.io/2017/11/20/微信小程序/</id>
+    <published>2017-11-20T14:32:53.000Z</published>
+    <updated>2017-11-20T16:30:32.072Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>1.分辨率问题</strong><br>​    </p><pre><code>以iP6的物理像素750*1334为设计稿进行设计iPhone6下1px = 1rpxiPhone6 plus 下 1px = 0.6rpx</code></pre><p><strong>2.页面之间的跳转</strong><br>​<br>    //会跳转并且可以返回父页面，会执行onHide生命周期<br>    wx.navigateTo({<br>        url:”../posts/post”<br>    });</p><pre><code>//跳转后不可以返回父页面，会执行onUnLoad生命周期wx.redirectTo({    url:&quot;../posts/post&quot;})</code></pre><p><strong>3.点击事件</strong><br>​<br>    //点击子节点，子父节点都会相应事件<br>    <view class="moto-container" bindtap="onTap"><br>    <text class="moto" bindtap="onSubTap">开启撸猫之旅</text><br>    </view><br>    //点击子节点，只有子节点会有相应<br>    <view class="moto-container" bindtap="onTap"><br>    <text class="moto" catchtap="onSubTap">开启撸猫之旅</text><br>    </view></p><p><strong>4..js文件data文件执行该过程</strong><br>​<br>        小程序总是会读取data对象来做数据绑定，是在onLoad事件执行之后发生的。</p><p><strong>5.缓存的处理(不能超过10M)</strong><br>​<br>    wx.setStorageSync(“key”,”value”)</p><pre><code>wx.getStorageSync(&quot;key&quot;)wx.removeStorageSync(&quot;key&quot;)wx.clearStorageSync();</code></pre><p>​<br>​<br>​<br>​<br>​<br>​<br>​<br>​<br>​<br>​<br>​<br>​<br>​<br>​<br>​<br>​<br>​<br>​    </p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;strong&gt;1.分辨率问题&lt;/strong&gt;&lt;br&gt;​    &lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;以iP6的物理像素750*1334为设计稿进行设计
+iPhone6下1px = 1rpx
+iPhone6 plus 下 1px = 0.6rpx
+&lt;/code&gt;&lt;/pre&gt;&lt;p
       
     
     </summary>
