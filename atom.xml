@@ -131,31 +131,6 @@ python2 和 Python3的区别是前者不支持中文，后者支持和中文
   </entry>
   
   <entry>
-    <title>微信小程序</title>
-    <link href="http://qdafengzi.github.io/2017/11/20/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
-    <id>http://qdafengzi.github.io/2017/11/20/微信小程序/</id>
-    <published>2017-11-20T14:32:53.000Z</published>
-    <updated>2017-11-20T16:30:32.072Z</updated>
-    
-    <content type="html"><![CDATA[<p><strong>1.分辨率问题</strong><br>​    </p><pre><code>以iP6的物理像素750*1334为设计稿进行设计iPhone6下1px = 1rpxiPhone6 plus 下 1px = 0.6rpx</code></pre><p><strong>2.页面之间的跳转</strong><br>​<br>    //会跳转并且可以返回父页面，会执行onHide生命周期<br>    wx.navigateTo({<br>        url:”../posts/post”<br>    });</p><pre><code>//跳转后不可以返回父页面，会执行onUnLoad生命周期wx.redirectTo({    url:&quot;../posts/post&quot;})</code></pre><p><strong>3.点击事件</strong><br>​<br>    //点击子节点，子父节点都会相应事件<br>    <view class="moto-container" bindtap="onTap"><br>    <text class="moto" bindtap="onSubTap">开启撸猫之旅</text><br>    </view><br>    //点击子节点，只有子节点会有相应<br>    <view class="moto-container" bindtap="onTap"><br>    <text class="moto" catchtap="onSubTap">开启撸猫之旅</text><br>    </view></p><p><strong>4..js文件data文件执行该过程</strong><br>​<br>        小程序总是会读取data对象来做数据绑定，是在onLoad事件执行之后发生的。</p><p><strong>5.缓存的处理(不能超过10M)</strong><br>​<br>    wx.setStorageSync(“key”,”value”)</p><pre><code>wx.getStorageSync(&quot;key&quot;)wx.removeStorageSync(&quot;key&quot;)wx.clearStorageSync();</code></pre><p>​<br>​<br>​<br>​<br>​<br>​<br>​<br>​<br>​<br>​<br>​<br>​<br>​<br>​<br>​<br>​<br>​<br>​    </p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;strong&gt;1.分辨率问题&lt;/strong&gt;&lt;br&gt;​    &lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;以iP6的物理像素750*1334为设计稿进行设计
-iPhone6下1px = 1rpx
-iPhone6 plus 下 1px = 0.6rpx
-&lt;/code&gt;&lt;/pre&gt;&lt;p
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>安卓知识回顾</title>
     <link href="http://qdafengzi.github.io/2017/11/20/%E5%AE%89%E5%8D%93%E7%9F%A5%E8%AF%86%E5%9B%9E%E9%A1%BE/"/>
     <id>http://qdafengzi.github.io/2017/11/20/安卓知识回顾/</id>
@@ -173,6 +148,31 @@ iPhone6 plus 下 1px = 0.6rpx
 String versionName;
 // 获取包管理器
 PackageMana
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>微信小程序</title>
+    <link href="http://qdafengzi.github.io/2017/11/20/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    <id>http://qdafengzi.github.io/2017/11/20/微信小程序/</id>
+    <published>2017-11-20T14:32:53.000Z</published>
+    <updated>2017-11-20T16:30:32.072Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>1.分辨率问题</strong><br>​    </p><pre><code>以iP6的物理像素750*1334为设计稿进行设计iPhone6下1px = 1rpxiPhone6 plus 下 1px = 0.6rpx</code></pre><p><strong>2.页面之间的跳转</strong><br>​<br>    //会跳转并且可以返回父页面，会执行onHide生命周期<br>    wx.navigateTo({<br>        url:”../posts/post”<br>    });</p><pre><code>//跳转后不可以返回父页面，会执行onUnLoad生命周期wx.redirectTo({    url:&quot;../posts/post&quot;})</code></pre><p><strong>3.点击事件</strong><br>​<br>    //点击子节点，子父节点都会相应事件<br>    <view class="moto-container" bindtap="onTap"><br>    <text class="moto" bindtap="onSubTap">开启撸猫之旅</text><br>    </view><br>    //点击子节点，只有子节点会有相应<br>    <view class="moto-container" bindtap="onTap"><br>    <text class="moto" catchtap="onSubTap">开启撸猫之旅</text><br>    </view></p><p><strong>4..js文件data文件执行该过程</strong><br>​<br>        小程序总是会读取data对象来做数据绑定，是在onLoad事件执行之后发生的。</p><p><strong>5.缓存的处理(不能超过10M)</strong><br>​<br>    wx.setStorageSync(“key”,”value”)</p><pre><code>wx.getStorageSync(&quot;key&quot;)wx.removeStorageSync(&quot;key&quot;)wx.clearStorageSync();</code></pre><p>​<br>​<br>​<br>​<br>​<br>​<br>​<br>​<br>​<br>​<br>​<br>​<br>​<br>​<br>​<br>​<br>​<br>​    </p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;strong&gt;1.分辨率问题&lt;/strong&gt;&lt;br&gt;​    &lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;以iP6的物理像素750*1334为设计稿进行设计
+iPhone6下1px = 1rpx
+iPhone6 plus 下 1px = 0.6rpx
+&lt;/code&gt;&lt;/pre&gt;&lt;p
       
     
     </summary>
