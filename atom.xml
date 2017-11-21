@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-11-20T16:31:48.645Z</updated>
+  <updated>2017-11-20T16:31:21.090Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>01_Kotlin引入</title>
+    <link href="http://yoursite.com/2017/11/20/01.Kotlin%E5%BC%95%E5%85%A5/"/>
+    <id>http://yoursite.com/2017/11/20/01.Kotlin引入/</id>
+    <published>2017-11-20T14:32:53.000Z</published>
+    <updated>2017-11-20T16:31:21.090Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Kotlin引入"><a href="#Kotlin引入" class="headerlink" title="Kotlin引入"></a>Kotlin引入</h3><p>1.在线运行环境：<br>​<br>    <a href="https://try.kotlinlang.org" target="_blank" rel="noopener">https://try.kotlinlang.org</a></p><p>2.安装运行环境并配置<br>​<br>    <a href="https://github.com/JetBrains/kotlin/releases/tag/v1.1.50" target="_blank" rel="noopener">https://github.com/JetBrains/kotlin/releases/tag/v1.1.50</a></p><p>3.REPL环境</p><pre><code>read-eval-print loop交互式解释环境所有的命令都是以:开头</code></pre><p>4.在命令行运行脚本文件<br>​<br>    文件扩展名为.kts<br>    kotlinc -script test.kts<br>5.在浏览器中运行Kotlin程序<br>​<br>6.如何在Node.js中运行Kotlin程序<br>​<br>    转换为JavaScript后用<br>7.在微信小程序中运行Kotlin程序<br>​<br>    现在最大的小程序包不能超过3M<br>8.Kotlin语法糖<br>​<br>    JVM（byte code）</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;Kotlin引入&quot;&gt;&lt;a href=&quot;#Kotlin引入&quot; class=&quot;headerlink&quot; title=&quot;Kotlin引入&quot;&gt;&lt;/a&gt;Kotlin引入&lt;/h3&gt;&lt;p&gt;1.在线运行环境：&lt;br&gt;​&lt;br&gt;    &lt;a href=&quot;https://try.kot
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>02_Kotlin基础知识</title>
@@ -74,27 +95,6 @@
       
       
         &lt;h1 id=&quot;基础命令&quot;&gt;&lt;a href=&quot;#基础命令&quot; class=&quot;headerlink&quot; title=&quot;基础命令&quot;&gt;&lt;/a&gt;基础命令&lt;/h1&gt;&lt;h3 id=&quot;一、命令-最基础&quot;&gt;&lt;a href=&quot;#一、命令-最基础&quot; class=&quot;headerlink&quot; title=&quot;一
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>01_Kotlin引入</title>
-    <link href="http://yoursite.com/2017/11/20/01.Kotlin%E5%BC%95%E5%85%A5/"/>
-    <id>http://yoursite.com/2017/11/20/01.Kotlin引入/</id>
-    <published>2017-11-20T14:32:53.000Z</published>
-    <updated>2017-11-20T16:31:21.090Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="Kotlin引入"><a href="#Kotlin引入" class="headerlink" title="Kotlin引入"></a>Kotlin引入</h3><p>1.在线运行环境：<br>​<br>    <a href="https://try.kotlinlang.org" target="_blank" rel="noopener">https://try.kotlinlang.org</a></p><p>2.安装运行环境并配置<br>​<br>    <a href="https://github.com/JetBrains/kotlin/releases/tag/v1.1.50" target="_blank" rel="noopener">https://github.com/JetBrains/kotlin/releases/tag/v1.1.50</a></p><p>3.REPL环境</p><pre><code>read-eval-print loop交互式解释环境所有的命令都是以:开头</code></pre><p>4.在命令行运行脚本文件<br>​<br>    文件扩展名为.kts<br>    kotlinc -script test.kts<br>5.在浏览器中运行Kotlin程序<br>​<br>6.如何在Node.js中运行Kotlin程序<br>​<br>    转换为JavaScript后用<br>7.在微信小程序中运行Kotlin程序<br>​<br>    现在最大的小程序包不能超过3M<br>8.Kotlin语法糖<br>​<br>    JVM（byte code）</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;Kotlin引入&quot;&gt;&lt;a href=&quot;#Kotlin引入&quot; class=&quot;headerlink&quot; title=&quot;Kotlin引入&quot;&gt;&lt;/a&gt;Kotlin引入&lt;/h3&gt;&lt;p&gt;1.在线运行环境：&lt;br&gt;​&lt;br&gt;    &lt;a href=&quot;https://try.kot
       
     
     </summary>
