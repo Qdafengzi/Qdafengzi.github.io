@@ -16,16 +16,20 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>归档: 2017 | Qdafengzi</title>
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Qdafengzi">
-<meta property="og:url" content="http://yoursite.com/archives/2017/index.html">
+  <title>02_Kotlin基础知识 | Qdafengzi</title>
+  <meta name="description" content="Kotlin基础知识1.定义变量和常量​    变量var    var n:Int = 30    var ok:Int    var abc = 124    var s = “abc” 常量val         val m:Int = 124  位置不同：在Kotlin中数据类型放到变量后面，并用:分割 变量用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="02_Kotlin基础知识">
+<meta property="og:url" content="http://yoursite.com/2017/11/20/02.Kotlin基础知识/index.html">
 <meta property="og:site_name" content="Qdafengzi">
+<meta property="og:description" content="Kotlin基础知识1.定义变量和常量​    变量var    var n:Int = 30    var ok:Int    var abc = 124    var s = “abc” 常量val         val m:Int = 124  位置不同：在Kotlin中数据类型放到变量后面，并用:分割 变量用var 常量用val Kotlin内置类型首字母都是大写的 Kotlin可以根据">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-11-20T16:31:48.645Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Qdafengzi">
+<meta name="twitter:title" content="02_Kotlin基础知识">
+<meta name="twitter:description" content="Kotlin基础知识1.定义变量和常量​    变量var    var n:Int = 30    var ok:Int    var abc = 124    var s = “abc” 常量val         val m:Int = 124  位置不同：在Kotlin中数据类型放到变量后面，并用:分割 变量用var 常量用val Kotlin内置类型首字母都是大写的 Kotlin可以根据">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://yoursite.com/archives/2017/index.html">
+  <link rel="canonical" href="http://yoursite.com/2017/11/20/02.Kotlin基础知识/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Qdafengzi" type="application/atom+xml">
   
@@ -328,108 +332,327 @@
   
   
 <main class="main" role="main">
-  	<article class="content article article-archives article-type-list" itemscope="">
-	    <header class="article-header">
-	      <h1 itemprop="title">归档: 2017</h1>
-	      <p class="text-muted">共 7 篇文章</p>
-	    </header>
-	    <div class="article-body">
-	      
+  <div class="content">
+  <article id="post-02.Kotlin基础知识" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
   
+    <h1 class="article-title" itemprop="name">
+      02_Kotlin基础知识
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="fa fa-calendar-check-o"></i>
+	<a href="/2017/11/20/02.Kotlin基础知识/" class="article-date">
+	  <time datetime="2017-11-20T14:32:53.000Z" itemprop="datePublished">2017-11-20</time>
+	</a>
+</span>
+        
+        
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="fa fa-eye" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+        <span class="post-comment"><i class="fa fa-commenting-o"></i> <a href="/2017/11/20/02.Kotlin基础知识/#comments" class="article-comment-link">评论</a></span>
+        
+      </div>
+      
+    </div>
+    <div class="article-entry markdown-body" itemprop="articleBody">
+      
+        <h3 id="Kotlin基础知识"><a href="#Kotlin基础知识" class="headerlink" title="Kotlin基础知识"></a>Kotlin基础知识</h3><p>1.定义变量和常量<br>​<br>    变量var<br>    var n:Int = 30<br>    var ok:Int<br>    var abc = 124<br>    var s = “abc”</p>
+<pre><code>常量val        
+val m:Int = 124
+
+位置不同：在Kotlin中数据类型放到变量后面，并用:分割
+变量用var 常量用val
+Kotlin内置类型首字母都是大写的
+Kotlin可以根据右侧初始化的值自动推导数据类型，初始化可以不写数据类型
+</code></pre><p>2.定义函数<br>​<br>    函数头，主要包括函数名和标识函数的关键字<br>    参数，包括参数名和参数类型<br>    返回值，包括返回值的类型，如果没有返回值</p>
+<pre><code>有返回值
+fun add(m:Int,n:Int):Int{
+    return m + n
+}
+
+无返回值
+fun process(m:Int):Unit{
+    println(m)
+}
+
+无返回值
+fun process(m:Int){
+    println(m)
+}
+</code></pre><p>3.注释</p>
+<pre><code>和Java区别是多行注释可以嵌套
+</code></pre><p>4.数据类型<br>​<br>    数据类型   占用字节数<br>    Double            8<br>    Float          4<br>    Long              8<br>    Int                4<br>    Short          2<br>    Byte            1</p>
+<pre><code>不能像Java一样自动转换
+要用toByte toShort toInt等方法
+
+表示Long，数值后面加l或L，123L
+表示Float，数值后面加f或F，123.3F
+
+目前Kotlin只支持十六进制和二进制
+十六进制用0x开头，0x1E
+二进制：数值用0b开头，0b10011
+
+下划线_分隔符把数值分开
+val oneMillion = 1_000_000
+</code></pre><p>5.字符类型<br>​<br>    Char表示<br>    如果c和97比较必须c.toInt之后才可以比较</p>
+<p>6.布尔类型<br>​<br>    Boolean<br>7.数组<br>​<br>    arrayOf可以存储任何值的数组<br>    val arr = arrayOf(1,2,3,’a’,”adsa”,true)<br>    超过范围就会索引越界和Java一样</p>
+<pre><code>arrayOfNulls直接定义一个长度为10的整型数组
+val arr1 = arrayOfNulls&lt;Int&gt;(10)
+没初始化默认为null，因为是对象
+
+使用Array类构造数组长度和初始化数据方法
+var arr3 = Array(10,{i -&gt; (i*i).toString()})
+
+intArrayOf、shortArrayOf等
+var arr4: IntArray = intArrayOf(10,20,30)
+</code></pre><p>8.字符串</p>
+<pre><code>普通字符串和Java一样
+
+保留原始格式的字符串(raw string)
+var s1 = &quot;&quot;&quot;
+    hello
+            world
+    时间
+“”“
+
+字符串模版（占位符）
+val i = 10
+val s2 = &quot;i = $i&quot;
+</code></pre><p>9.包(Package)</p>
+<pre><code>Java 包与目录有关
+Test.java
+package a.b;
+
+Kotlin 与当前目录无关
+他可以给包取别名
+import baidu.com.MyClass as my
+</code></pre><p>10.条件语句when<br>​<br>    类似Java的switch<br>    x = 1<br>    when(x){<br>        1-&gt;{<br>            println(“1—-“)<br>        }</p>
+<pre><code>    2-&gt;{
+        println(&quot;2-----&quot;)
+
+    }
+
+    else{
+        println(&quot;其他&quot;)
+    }
+
+}    
+
+如果是对应的多个值
+var y = 1
+when(y){
+    1,2,3,4,5-&gt;{
+        println(&quot;以下符合条件&quot;)
+    }
+    10-&gt;{
+        println(&quot;以下不符合条件&quot;)
+    }
+    else{
+        println(&quot;其他&quot;)
+
+    }
+}
+
+
+when作为表达式使用
+
+var xyz = 1
+var m = when(xyz){
+
+    1-&gt;{
+        println(&quot;xyz==1&quot;)
+        20
+    }
+
+    2-&gt;{
+        println(&quot;xyz==2&quot;)
+        40
+    }
+    else{
+        100
+    }
+}
+
+使用in关键字
+
+var n = 20
+when(n){
+    in 1..15-&gt;print(&quot;满足条件&quot;)
+
+    in 16..20-&gt;println(“不满足条件”)
+
+    !in 100..200-&gt;println(&quot;hello world&quot;)
+    else-&gt;println(&quot;条件未知&quot;)
+}
+
+
+分支条件是一个函数
+
+fun double(x:Int):Int{
+    return x * x
+}
+
+var ok = 9
+when(ok){
+    double(2)-&gt;println(&quot;不满足条件&quot;)
+    double(3)-&gt;println(&quot;满足条件&quot;)
+    else-&gt;println(&quot;条件未知&quot;)
+}
+</code></pre><p>11.循环语句中的for<br>​<br>    var arr = intArrayOf(1,2,3,4,5)<br>    for(item: Int in arr){<br>        println(item)<br>    }    </p>
+<pre><code>for(i in arr.indices){
+    println(&quot;arr[$i] = &quot; + arr[i])
+}
+
+for((index, value) in arr.withIndex()){
+    println(&quot;arr[$index] = &quot; + value)
+}
+</code></pre><p>12.循环语句while</p>
+<pre><code>var i = 0
+while(i++ &lt; 10){
+    println(i)
+}
+
+do{
+    if(i==8){
+        continue
+    }
+    println(i)
+
+    if(i == 6){
+        break
+    }
+
+}while(--i &gt; 0)
+</code></pre>
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://yoursite.com/2017/11/20/02.Kotlin基础知识/" title="02_Kotlin基础知识" target="_blank" rel="external">http://yoursite.com/2017/11/20/02.Kotlin基础知识/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/qdafengzi" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/qdafengzi" target="_blank"><span class="text-dark">Qdafengzi</span><small class="ml-1x">Android Developer</small></a></h3>
+        <div>Android开发从事者，热爱IT、喜欢新科技、爱玩数码。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
   
     
+  <section id="comments">
+  	
+       
+    <div id="uyan_frame"></div>
+
     
-      
-      
-      <section class="panel panel-default b-no">
-        <div class="panel-heading" role="tab">
-          <h3 class="panel-title">
-            <a data-toggle="collapse" href="#collapse2017" aria-expanded="true">
-              <i class="fa fa-calendar-plus-o text-active"></i><i class="fa fa-calendar-minus-o text"></i>
-              2017
-            </a>
-            <!-- <a href="/archives/2017" class="archive-year">2017</a> -->
-          </h3>
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2017/11/20/03.类和接口/" title="01_Kotlin类和接口">下一篇&nbsp;&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning hidden-xs" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  
+  
+  <div class="bar-right">
+    <div class="share-component" data-sites="weibo,qq,wechat" data-mobile-sites="weibo,qq,qzone"></div>
+  </div>
+  
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-tit">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="donate-payimg">
+            <img src="/images/donate/alipayimg.png" alt="扫码支持" title="扫一扫" />
+          </div>
+          <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+          <div class="donate-payselect">
+            <div class="pay_item checked" data-id="alipay" data-src="/images/donate/alipayimg.png">
+              <div class="radio">
+                <input type="radio" name="payment" id="input-alipay" value="alipay" checked>
+                <label class="pay_logo clickable" for="input-alipay"><img src="/images/donate/alipay.jpg" alt="支付宝" /></label>
+              </div>
+            </div>
+            <div class="pay_item" data-id="weipay" data-src="/images/donate/weipayimg.png">
+              <div class="radio">
+                <input type="radio" name="payment" id="input-weipay" value="weipay">
+                <label class="pay_logo clickable" for="input-weipay"><img src="/images/donate/weipay.jpg" alt="微信支付" /></label>
+              </div>
+            </div>
+          </div>
+          <div class="text-grey">
+            <p>扫一扫，即可进行扫码打赏哦</p>
+          </div>
         </div>
-        <div id="collapse2017" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading2017">
-        <div class="panel-body">
-          <div class="collection">
-    
-    
-<a href="/2017/11/20/02.Kotlin基础知识/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2017-11-20T14:32:53.000Z" itemprop="datePublished">2017-11-20</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> 02_Kotlin基础知识
-</a>
+      </div>
+    </div>
+  </div>
+</div>
 
 
-  
-    
-    
-    
-<a href="/2017/11/20/03.类和接口/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2017-11-20T14:32:53.000Z" itemprop="datePublished">2017-11-20</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> 01_Kotlin类和接口
-</a>
 
-
-  
-    
-    
-    
-<a href="/2017/11/20/Linux/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2017-11-20T14:32:53.000Z" itemprop="datePublished">2017-11-20</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> 01_Linux基础命令
-</a>
-
-
-  
-    
-    
-    
-<a href="/2017/11/20/01.Kotlin引入/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2017-11-20T14:32:53.000Z" itemprop="datePublished">2017-11-20</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> 01_Kotlin引入
-</a>
-
-
-  
-    
-    
-    
-<a href="/2017/11/20/python基础教程/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2017-11-20T14:32:53.000Z" itemprop="datePublished">2017-11-20</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> Python基础教程
-</a>
-
-
-  
-    
-    
-    
-<a href="/2017/11/20/安卓知识回顾/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2017-11-20T14:32:53.000Z" itemprop="datePublished">2017-11-20</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> 安卓知识回顾
-</a>
-
-
-  
-    
-    
-    
-<a href="/2017/11/20/微信小程序/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2017-11-20T14:32:53.000Z" itemprop="datePublished">2017-11-20</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> 微信小程序
-</a>
-
-
-  
-  
-    </div></div></div></section>
-  
-
-	    </div>
-  	</article>
-  	 	
 </main>
 
   <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
@@ -488,6 +711,12 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
     
+    
+        
+    
+    <script defer type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=[object Object]"></script>
+
+
     
     
 

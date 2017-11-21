@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>01_Linux基础命令 | Qdafengzi</title>
+  <meta name="description" content="基础命令一、命令(最基础)1.进入图形界面：startX  2.shutdown -h now 立刻进行关机  3.shutdown -r now 现在重启  / reboot  4.当前在那个目录pwd  5.添加用户 useradd xiaoming  6.设置密码 passwd xiaoming  7.删除用户 ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="01_Linux基础命令">
+<meta property="og:url" content="http://yoursite.com/2017/11/20/Linux/index.html">
+<meta property="og:site_name" content="Qdafengzi">
+<meta property="og:description" content="基础命令一、命令(最基础)1.进入图形界面：startX  2.shutdown -h now 立刻进行关机  3.shutdown -r now 现在重启  / reboot  4.当前在那个目录pwd  5.添加用户 useradd xiaoming  6.设置密码 passwd xiaoming  7.删除用户 userdel xiaoming   8.删除用户及用户主目录 userdel">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-11-20T16:33:06.811Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="01_Linux基础命令">
+<meta name="twitter:description" content="基础命令一、命令(最基础)1.进入图形界面：startX  2.shutdown -h now 立刻进行关机  3.shutdown -r now 现在重启  / reboot  4.当前在那个目录pwd  5.添加用户 useradd xiaoming  6.设置密码 passwd xiaoming  7.删除用户 userdel xiaoming   8.删除用户及用户主目录 userdel">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://yoursite.com/2017/11/20/Linux/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Qdafengzi" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  <!-- font-awesome CSS -->
+  <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  
+    
+    
+
+</head>
+
+
+<body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/qdafengzi" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Qdafengzi</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Android Developer</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="fa fa-map-marker"></i> Shenzhen, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="fa fa-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      <!-- <span class="ins-close ins-selectable"><i class="fa fa-times"></i></span> -->
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav">
+        
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="fa fa-fw fa-dashboard"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="fa fa-fw fa-delicious"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="fa fa-fw fa-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="fa fa-fw fa-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="fa fa-fw fa-code"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books">
+            
+            <i class="fa fa-fw fa-leanpub"></i>
+            
+            <span class="menu-title">书单</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="fa fa-fw fa-gg"></i>
+            
+            <span class="menu-title">友链</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="fa fa-fw fa-coffee"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/qdafengzi" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="fa fa-github"></i></a></li>
+        
+        <li><a href="https://weibo.com/u/2323441364?is_all=1" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="fa fa-weibo"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="fa fa-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            
+            <p>您好，您是第<span id="busuanzi_value_site_uv">0</span>位访客</p>
+            
+            <div class="content">
+                <p>Welcome to Qdafengzi's blog !</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+
+    
+      
+
+    
+      
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">7</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2017/11/20/02.Kotlin基础知识/" class="title">02_Kotlin基础知识</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2017-11-20T14:32:53.000Z" itemprop="datePublished">2017-11-20</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2017/11/20/03.类和接口/" class="title">01_Kotlin类和接口</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2017-11-20T14:32:53.000Z" itemprop="datePublished">2017-11-20</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2017/11/20/Linux/" class="title">01_Linux基础命令</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2017-11-20T14:32:53.000Z" itemprop="datePublished">2017-11-20</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2017/11/20/01.Kotlin引入/" class="title">01_Kotlin引入</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2017-11-20T14:32:53.000Z" itemprop="datePublished">2017-11-20</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2017/11/20/python基础教程/" class="title">Python基础教程</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2017-11-20T14:32:53.000Z" itemprop="datePublished">2017-11-20</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-Linux" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      01_Linux基础命令
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="fa fa-calendar-check-o"></i>
+	<a href="/2017/11/20/Linux/" class="article-date">
+	  <time datetime="2017-11-20T14:32:53.000Z" itemprop="datePublished">2017-11-20</time>
+	</a>
+</span>
+        
+        
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="fa fa-eye" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+        <span class="post-comment"><i class="fa fa-commenting-o"></i> <a href="/2017/11/20/Linux/#comments" class="article-comment-link">评论</a></span>
+        
+      </div>
+      
+    </div>
+    <div class="article-entry markdown-body" itemprop="articleBody">
+      
+        <h1 id="基础命令"><a href="#基础命令" class="headerlink" title="基础命令"></a>基础命令</h1><h3 id="一、命令-最基础"><a href="#一、命令-最基础" class="headerlink" title="一、命令(最基础)"></a>一、命令(最基础)</h3><pre><code>1.进入图形界面：startX
+
+2.shutdown -h now 立刻进行关机
+
+3.shutdown -r now 现在重启  / reboot
+
+4.当前在那个目录pwd
+
+5.添加用户 useradd xiaoming
+
+6.设置密码 passwd xiaoming
+
+7.删除用户 userdel xiaoming 
+
+8.删除用户及用户主目录 userdel -r xiaoming
+</code></pre><h3 id="二、常用命令"><a href="#二、常用命令" class="headerlink" title="二、常用命令"></a>二、常用命令</h3><ul>
+<li><p>级别：</p>
+<p> 0.0用户级别：关机<br> ​    </p>
+<pre><code>1.单用户模式
+
+2.多用户没有网络状态
+
+3.多用户网络状态(常用)
+
+4.系统未使用保留给用户
+
+5.图形化界面
+
+6.系统重启
+</code></pre></li>
+<li><p>命令</p>
+<p> ls -a显示隐藏文件<br> ​    </p>
+<pre><code>ls -l显示长列表格式
+
+ls -al
+
+ls -ld 文件夹 显示文件目录的信息，而不是文件下的文件列表
+
+ls -lh显示文件的详情，文件大小人性化显示
+
+mkdir 建立目录
+
+rmdir 删除目录
+
+grep &quot;关键词&quot; 文件名 查看文件中是否有此关键词
+
+find / -name 文件名字  从根目录查找文件
+
+ls -l &gt; a.txt列表的内容写入文件a.txt中(覆盖)
+
+ls -i文件目录i界面，一个文件的唯一标识
+
+ls -al &gt;&gt; aa.txt列表的内容追加到文件aa.txt的末尾
+
+groupadd policeman添加警察组
+
+useradd -g policeman xiaoming 把小明添加到policeman组里面
+
+chmod 777 tony 赋予tony权限
+
+logout 切换用户 
+
+cat 文件  查看文件
+
+vi  文件  不仅可以查看还可以修改
+</code></pre><p> ​    </p>
+<pre><code>-rwxrw-r--     
+</code></pre><p> ​        </p>
+<pre><code>    -(文件类型 -二进制文件d目录 l软链接文件)
+
+    rwx(文件所有者的权限)
+
+    rw-(与文件所有者同一组的用户权限)
+
+    r--(不与文件所有者同组的其他用户的权限)
+
+- 代表文件类型(-文件d目录l链接)，r可读用4表示，w可写用2表示，x可执行 用1表示
+</code></pre><p> ​    </p>
+</li>
+</ul>
+<h3 id="三、命令"><a href="#三、命令" class="headerlink" title="三、命令"></a>三、命令</h3><pre><code>mkdir Japan 创建Japan目录
+
+mkdir -p Japan/xiaodingying  递归创建目录
+
+mkdir -p Japan/cangjing Japan/longze 递归创建多个目录
+
+cd 切换目录
+
+change directory 
+pwd 显示当前目录 
+
+print working directory
+
+cd ..回到上一层目录
+
+rmdir 删除一个空目录
+
+remove empty directories
+cp + 文件目录 + 要复制的文件目录
+
+cp -rp[源文件或目录][目标目录]
+
+cp -r 复制目录
+
+cp -p 保留文件属性
+
+Ctrl + l 清屏
+
+mv + 源文件或目录 + 目标目录  剪切处理
+
+rm + 源文件或目录 + 目标目录  删除处理
+
+rm -rf 删除一个目录 -r删除目录  -f强制执行
+
+Ctrl + c 终止操作
+
+touch +文件名 创建文件
+
+cat 文件名  查看文件内容
+
+cat -n 文件名 查看文件并带有行号
+
+tac 文件名 倒序显示内容
+
+more 文件名字 分页查看
+
+f 翻页
+Enter 换行
+q或者Q退出
+
+less 文件名字
+
+Enter 换行
+上箭头
+空格 翻页
+/关键词 搜索 按n进行查看所有的关键词(n代表next)
+head -n 7 显示文件的前7行  不加-n 默认是前十行
+
+tail 文件名 显示文件的后面几行
+
+    -n 指定行数
+    -f 动态显示文件末尾的内容
+ln -s + 原文件 + 目标文件 软链接
+
+lrwxrwxrwx l软链接，会显示文件指向
+</code></pre><h3 id="四、权限管理"><a href="#四、权限管理" class="headerlink" title="四、权限管理"></a>四、权限管理</h3><pre><code>chmod [{ugoa}{+-=}{rwx}][文件或目录]
+
+chmod [mode=421] [文件或目录]
+
+chmod -R 递归修改
+
+
+r --- 4
+w --- 2
+x --- 1
+
+rwxrw-r--
+7  6  4    
+</code></pre><p>File<br>​<br>    r:cat/more/head/tail/less<br>    w:vim<br>    x:script command</p>
+<p>Directory<br>​<br>    r:ls<br>    w:touch/mkdir/rmdir/rm<br>    x:cd</p>
+<pre><code>chown change file ownership
+
+chown + 用户名 + 文件或目录改变一个文件的所有者
+
+chgrp change file group
+
+chgrp 用户组 + 文件或目录
+
+umask [-S]以rwx形式显示新建文件缺省权限
+</code></pre><h3 id="五、搜索"><a href="#五、搜索" class="headerlink" title="五、搜索"></a>五、搜索</h3><pre><code>find [搜索范围][匹配条件]
+
+find + 目录 -name init 搜索目录文件夹中init的文件
+
+find + 目录 -name * init * 搜索目录文件夹中文件名包含init的文件
+
+find + 目录 -iname init 搜索目录文件夹中init的文件（不区分大小写）
+
+find + 目录 -size +204800  搜索目录文件夹中大于100M的文件
+
+find /ect -size +163840 -a -size -204800查找文件中大于80M小于100M的文件
+
+一个数据块 512字节 0.5k
+find /home -user + 所属组  查看所属组下的文件
+
+find /etc -cmin -5查找5分钟内被修改过属性的文件和目录
+
+-amin 访问时间access
+
+-cmin 文件属性 change
+
+-mmin 文件内容 modify
+
+-type添加后可以指定查找的文件类型，f文件  d目录 l软链接文件
+
+-a 两个条件都满足
+
+-o 两个条件满足其一即可
+
+find /etc -name inittab -exec ls -l{}\;
+在/etc下查找inittab文件并显示其详细信息
+
+find /etc -inum 31551 -exec rm {}\;
+在目录下找到31551节点的文件并且删除
+
+locate + 文件名已有的文件(临时创建的查找不到，临时文件也会查找不到)
+
+updatedb升级文件资料库(升级之后临时文件还是查找不到)
+
+which + 命令的名字  查找命令的所在位置
+
+whereis + 命令的名字 查找命令的绝对位置
+
+grep + 关键词 + 文件所在的路径 查找关键词所在文件中的情况
+
+grep -i + 关键词 + 文件所在的路径 查找关键词所在文件中的情况（不区分大小写）
+
+grep -v ^# + 文件所在的路径 查找关键词所在文件中的情况(去掉注释内容的文件内容)
+</code></pre><p>​    </p>
+<p>​<br>​    </p>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://yoursite.com/2017/11/20/Linux/" title="01_Linux基础命令" target="_blank" rel="external">http://yoursite.com/2017/11/20/Linux/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/qdafengzi" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/qdafengzi" target="_blank"><span class="text-dark">Qdafengzi</span><small class="ml-1x">Android Developer</small></a></h3>
+        <div>Android开发从事者，热爱IT、喜欢新科技、爱玩数码。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+       
+    <div id="uyan_frame"></div>
+
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2017/11/20/03.类和接口/" title="01_Kotlin类和接口"><i class="fa fa-angle-left" aria-hidden="true"></i>&nbsp;&nbsp;上一篇</a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2017/11/20/01.Kotlin引入/" title="01_Kotlin引入">下一篇&nbsp;&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning hidden-xs" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  
+  
+  <div class="bar-right">
+    <div class="share-component" data-sites="weibo,qq,wechat" data-mobile-sites="weibo,qq,qzone"></div>
+  </div>
+  
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-tit">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="donate-payimg">
+            <img src="/images/donate/alipayimg.png" alt="扫码支持" title="扫一扫" />
+          </div>
+          <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+          <div class="donate-payselect">
+            <div class="pay_item checked" data-id="alipay" data-src="/images/donate/alipayimg.png">
+              <div class="radio">
+                <input type="radio" name="payment" id="input-alipay" value="alipay" checked>
+                <label class="pay_logo clickable" for="input-alipay"><img src="/images/donate/alipay.jpg" alt="支付宝" /></label>
+              </div>
+            </div>
+            <div class="pay_item" data-id="weipay" data-src="/images/donate/weipayimg.png">
+              <div class="radio">
+                <input type="radio" name="payment" id="input-weipay" value="weipay">
+                <label class="pay_logo clickable" for="input-weipay"><img src="/images/donate/weipay.jpg" alt="微信支付" /></label>
+              </div>
+            </div>
+          </div>
+          <div class="text-grey">
+            <p>扫一扫，即可进行扫码打赏哦</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/qdafengzi" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="fa fa-github"></i></a></li>
+        
+        <li><a href="https://weibo.com/u/2323441364?is_all=1" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="fa fa-weibo"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="fa fa-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script src="/js/plugin.js"></script>
+<script src="/js/application.js"></script>
+  
+    
+    
+    
+        <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+    
+    
+    
+        
+<script defer src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+    
+    
+        
+    
+    <script defer type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=[object Object]"></script>
+
+
+    
+    
+
+
+
+</body>
+</html>

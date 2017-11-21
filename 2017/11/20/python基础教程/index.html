@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>Python基础教程 | Qdafengzi</title>
+  <meta name="description" content="1.安装测试​     安装略····  检测：终端输入python 退出Ctrl - D  或者 exit()  python2 和 Python3的区别是前者不支持中文，后者支持和中文 2.字符编码 123456ASCII	255		1bytes1980 	gb2312    7000多个字符1995	GBK1.0">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python基础教程">
+<meta property="og:url" content="http://yoursite.com/2017/11/20/python基础教程/index.html">
+<meta property="og:site_name" content="Qdafengzi">
+<meta property="og:description" content="1.安装测试​     安装略····  检测：终端输入python 退出Ctrl - D  或者 exit()  python2 和 Python3的区别是前者不支持中文，后者支持和中文 2.字符编码 123456ASCII	255		1bytes1980 	gb2312    7000多个字符1995	GBK1.0    2w+2000	GB18030		27000多个Unicode		2by">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-11-20T16:33:36.554Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python基础教程">
+<meta name="twitter:description" content="1.安装测试​     安装略····  检测：终端输入python 退出Ctrl - D  或者 exit()  python2 和 Python3的区别是前者不支持中文，后者支持和中文 2.字符编码 123456ASCII	255		1bytes1980 	gb2312    7000多个字符1995	GBK1.0    2w+2000	GB18030		27000多个Unicode		2by">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://yoursite.com/2017/11/20/python基础教程/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Qdafengzi" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  <!-- font-awesome CSS -->
+  <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  
+    
+    
+
+</head>
+
+
+<body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/qdafengzi" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Qdafengzi</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Android Developer</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="fa fa-map-marker"></i> Shenzhen, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="fa fa-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      <!-- <span class="ins-close ins-selectable"><i class="fa fa-times"></i></span> -->
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav">
+        
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="fa fa-fw fa-dashboard"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="fa fa-fw fa-delicious"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="fa fa-fw fa-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="fa fa-fw fa-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="fa fa-fw fa-code"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books">
+            
+            <i class="fa fa-fw fa-leanpub"></i>
+            
+            <span class="menu-title">书单</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="fa fa-fw fa-gg"></i>
+            
+            <span class="menu-title">友链</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="fa fa-fw fa-coffee"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/qdafengzi" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="fa fa-github"></i></a></li>
+        
+        <li><a href="https://weibo.com/u/2323441364?is_all=1" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="fa fa-weibo"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="fa fa-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            
+            <p>您好，您是第<span id="busuanzi_value_site_uv">0</span>位访客</p>
+            
+            <div class="content">
+                <p>Welcome to Qdafengzi's blog !</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+
+    
+      
+
+    
+      
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">7</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2017/11/20/02.Kotlin基础知识/" class="title">02_Kotlin基础知识</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2017-11-20T14:32:53.000Z" itemprop="datePublished">2017-11-20</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2017/11/20/03.类和接口/" class="title">01_Kotlin类和接口</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2017-11-20T14:32:53.000Z" itemprop="datePublished">2017-11-20</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2017/11/20/Linux/" class="title">01_Linux基础命令</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2017-11-20T14:32:53.000Z" itemprop="datePublished">2017-11-20</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2017/11/20/01.Kotlin引入/" class="title">01_Kotlin引入</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2017-11-20T14:32:53.000Z" itemprop="datePublished">2017-11-20</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2017/11/20/python基础教程/" class="title">Python基础教程</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2017-11-20T14:32:53.000Z" itemprop="datePublished">2017-11-20</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-python基础教程" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Python基础教程
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="fa fa-calendar-check-o"></i>
+	<a href="/2017/11/20/python基础教程/" class="article-date">
+	  <time datetime="2017-11-20T14:32:53.000Z" itemprop="datePublished">2017-11-20</time>
+	</a>
+</span>
+        
+        
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="fa fa-eye" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+        <span class="post-comment"><i class="fa fa-commenting-o"></i> <a href="/2017/11/20/python基础教程/#comments" class="article-comment-link">评论</a></span>
+        
+      </div>
+      
+    </div>
+    <div class="article-entry markdown-body" itemprop="articleBody">
+      
+        <p><strong>1.安装测试</strong><br>​    </p>
+<pre><code>安装略····
+
+检测：终端输入python
+退出Ctrl - D  或者 exit()
+
+python2 和 Python3的区别是前者不支持中文，后者支持和中文
+</code></pre><p><strong>2.字符编码</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ASCII	255		1bytes</span><br><span class="line">1980 	gb2312    7000多个字符</span><br><span class="line">1995	GBK1.0    2w+</span><br><span class="line">2000	GB18030		27000多个</span><br><span class="line">Unicode		2bytes</span><br><span class="line">utf-8 		en:1byte,zh:3bytes</span><br></pre></td></tr></table></figure>
+<p><strong>3.注释</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">单行注释	#</span><br><span class="line">多行注释	&apos;&apos;&apos;&apos;&apos;&apos;注释内容&apos;&apos;&apos;&apos;&apos;&apos;</span><br></pre></td></tr></table></figure>
+<p><strong>4.输入输出</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">input </span><br><span class="line"></span><br><span class="line">print</span><br></pre></td></tr></table></figure>
+<p><strong>5.密码输入时密文</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">引入：import getpass</span><br></pre></td></tr></table></figure>
+<p><strong>6.缩进错误</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">IndentationError:</span><br></pre></td></tr></table></figure>
+<p><strong>7.sys模块</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sys.path #环境变量</span><br><span class="line">sys.argv #相对路径</span><br></pre></td></tr></table></figure>
+<p><strong>8.os模块</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cmd_res = os.system(&quot;dir&quot;)	#执行命令不保存结果</span><br><span class="line">cmd_res = os.popen(&quot;dir&quot;).read()	#执行命令保存结果并输出</span><br></pre></td></tr></table></figure>
+<p><strong>9.bytes数据类型</strong></p>
+<p>Python3中在网络中的数据传输都必须用二进制数据进行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&apos;￥20&apos;.encode(&apos;utf-8&apos;)</span><br><span class="line"></span><br><span class="line">b&apos;\xef\xbf\xa520&apos;.decode(&apos;utf-8&apos;)</span><br></pre></td></tr></table></figure>
+<p><strong>10.列表</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">list = [&apos;a&apos;,&apos;b&apos;,&apos;c&apos;,&apos;d&apos;,&apos; e&apos;]</span><br><span class="line"></span><br><span class="line">print(list[1:3])	# 取值 b c</span><br><span class="line">print(list[-1])		#可以取负索引值</span><br><span class="line">print(list[:3])		#取值相当于[0:3]</span><br><span class="line">print(list[-2:-1])	#取值相当于[-2:-1]</span><br><span class="line"></span><br><span class="line">list.append(&apos;x&apos;)	#拼接</span><br><span class="line">list.insert(1,&apos;y&apos;)	#插入</span><br><span class="line">list.remove(&apos;b&apos;)	#删除</span><br><span class="line">del list[1]		#删除</span><br><span class="line">list.pop()	#没有下标就默认删除最后一个</span><br><span class="line">list.index(&apos;a&apos;)		#输出下标值 </span><br><span class="line">list.count(&apos;a&apos;)		#输出a的个数</span><br><span class="line">list.reverse()		#反转</span><br><span class="line">list.sort()		#排序	ASCII码的排序规则</span><br><span class="line">list2 = [&apos;n&apos;,&apos;m&apos;]	</span><br><span class="line">list.extend(lists)	#拼接list2</span><br></pre></td></tr></table></figure>
+<p><strong>11.copy</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">copy.copy()		#浅copy，如果一个列表中的某个元素是一个列表，修改这个列表的元素值，结果不是自己想要的</span><br><span class="line">copy.deepcopy()		#深copy</span><br><span class="line"></span><br><span class="line">实现浅copy的方法</span><br><span class="line">person = [&apos;a&apos;, &apos;b&apos;, [&apos;n&apos;, &apos;m&apos;], &apos;x&apos;]</span><br><span class="line">p1 = copy.copy(person)</span><br><span class="line">p2 = person[:]</span><br><span class="line">p3 = list(person)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">import copy</span><br><span class="line"></span><br><span class="line">names = [&apos;a&apos;, &apos;b&apos;, [&apos;n&apos;, &apos;m&apos;], &apos;x&apos;]</span><br><span class="line">names2 = copy.copy(names)</span><br><span class="line">print(names)</span><br><span class="line">print(names2)</span><br><span class="line"></span><br><span class="line">names[1] = &apos;x&apos;</span><br><span class="line">names[2][0] = &apos;Tony&apos;</span><br><span class="line"></span><br><span class="line">print(names)</span><br><span class="line">print(names2)</span><br><span class="line"></span><br><span class="line">#结果</span><br><span class="line">[&apos;a&apos;, &apos;b&apos;, [&apos;n&apos;, &apos;m&apos;], &apos;x&apos;]</span><br><span class="line">[&apos;a&apos;, &apos;b&apos;, [&apos;n&apos;, &apos;m&apos;], &apos;x&apos;]</span><br><span class="line">[&apos;a&apos;, &apos;x&apos;, [&apos;Tony&apos;, &apos;m&apos;], &apos;x&apos;]</span><br><span class="line">[&apos;a&apos;, &apos;b&apos;, [&apos;Tony&apos;, &apos;m&apos;], &apos;x&apos;]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">import copy</span><br><span class="line"></span><br><span class="line">names = [&apos;a&apos;, &apos;b&apos;, [&apos;n&apos;, &apos;m&apos;], &apos;x&apos;]</span><br><span class="line">names2 = copy.deepcopy(names)</span><br><span class="line">print(names)</span><br><span class="line">print(names2)</span><br><span class="line"></span><br><span class="line">names[1] = &apos;x&apos;</span><br><span class="line">names[2][0] = &apos;Tony&apos;</span><br><span class="line"></span><br><span class="line">print(names)</span><br><span class="line">print(names2)</span><br><span class="line"></span><br><span class="line">#结果</span><br><span class="line">[&apos;a&apos;, &apos;b&apos;, [&apos;n&apos;, &apos;m&apos;], &apos;x&apos;]</span><br><span class="line">[&apos;a&apos;, &apos;b&apos;, [&apos;n&apos;, &apos;m&apos;], &apos;x&apos;]</span><br><span class="line">[&apos;a&apos;, &apos;x&apos;, [&apos;Tony&apos;, &apos;m&apos;], &apos;x&apos;]</span><br><span class="line">[&apos;a&apos;, &apos;b&apos;, [&apos;n&apos;, &apos;m&apos;], &apos;x&apos;]</span><br></pre></td></tr></table></figure>
+<p><strong>12.元组</strong></p>
+<p>又叫只读列表，和列表一样，就是只有count和index方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">names = (&apos;x&apos;,&apos;y&apos;,&apos;z&apos;)	#用小括号表示</span><br></pre></td></tr></table></figure>
+<p><strong>13.isdigit、enumerate</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Salary = input(&quot;input your salary:&quot;)</span><br><span class="line"></span><br><span class="line">If salary.isdigit():	#判断是否是数字</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">names = (&apos;x&apos;,&apos;y&apos;,&apos;z&apos;)</span><br><span class="line"></span><br><span class="line">for index,item in enumerate(name):		#enumerate()获取下标</span><br><span class="line">	print(index,item)</span><br></pre></td></tr></table></figure>
+<p><strong>14.字符串常用操作</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">strip去空格相关</span><br><span class="line">join数组的拼接</span><br><span class="line">maketrans可以做加密</span><br></pre></td></tr></table></figure>
+<p><strong>15.集合</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">取交集intersection	&amp;</span><br><span class="line">list1.intersection(list2)</span><br><span class="line">并集	union	|</span><br><span class="line">差集	difference	-</span><br><span class="line">子集	issubset</span><br><span class="line">父集	issuperset</span><br><span class="line">对称差集	symmetric_difference	^</span><br><span class="line">isdisjoint是否有交集</span><br><span class="line">pop	删除</span><br><span class="line">remove		删除不存在的会出错</span><br><span class="line">discard		删除不存在的不会报错</span><br></pre></td></tr></table></figure>
+<p><strong>16.文件的操作</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">open(&quot;文件&quot;).read();</span><br><span class="line">open(&quot;yest&quot;,&apos;r&apos;,encoding);	&apos;r&apos;读	&apos;w&apos;写	&apos;a&apos;读和写append	&apos;r+&apos;读写(不常用)	&apos;w+&apos;读写(读和追加)</span><br><span class="line">&apos;rb&apos;、&apos;wb&apos;二进制的处理(不用写enconding否则报错)	</span><br><span class="line">readlines()	#读取一行，小文件</span><br><span class="line"></span><br><span class="line">f = open(&quot;yesterday&quot;,&apos;r&apos;, enconding = &apos;utf-8&apos;)</span><br><span class="line">f.tell()	#光标的位置</span><br><span class="line">f.seek(0)	#回到0</span><br><span class="line">f.enconding	#编码</span><br><span class="line">f.seekable(self)	#是否光标可移动</span><br><span class="line">f.truncate(20)	#截断多少个字符</span><br></pre></td></tr></table></figure>
+<p>进度条flush的运用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import sys, time</span><br><span class="line"></span><br><span class="line">for i in range(30):</span><br><span class="line">sys.stdout.write(&apos;#&apos;)</span><br><span class="line">sys.stdout.flush()</span><br><span class="line">time.sleep(0.2)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">with open() ad f: 		用with可以自动关闭</span><br></pre></td></tr></table></figure>
+<p><strong>17.字符编码</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gbk——&gt;utf-8  要先转成unicode</span><br></pre></td></tr></table></figure>
+<p><strong>18.函数</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">函数没有定义return任何数据的时候会返回None</span><br><span class="line"></span><br><span class="line">*args接收N个位置参数转换为元组</span><br><span class="line">**kwargs代表传递的参数是字典格式的，键值对，个数也是不固定</span><br><span class="line"></span><br><span class="line">在函数内修改全局变量要用global（字符串和数字）</span><br></pre></td></tr></table></figure>
+<p><strong>19.装饰器(重点较难)</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">原则：</span><br><span class="line">	不能修改被装饰的函数的源代码</span><br><span class="line">	不能修改被装饰的函数的调用方式</span><br><span class="line">实现：</span><br><span class="line">	函数即“变量”</span><br><span class="line">		定义之后就才可以使用</span><br><span class="line">	高阶函数</span><br><span class="line">		把一个函数名当作实参传给另外一个函数</span><br><span class="line">		返回值中包含函数名字</span><br><span class="line">	嵌套函数</span><br></pre></td></tr></table></figure>
+<p>20.列表生成式</p>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://yoursite.com/2017/11/20/python基础教程/" title="Python基础教程" target="_blank" rel="external">http://yoursite.com/2017/11/20/python基础教程/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/qdafengzi" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/qdafengzi" target="_blank"><span class="text-dark">Qdafengzi</span><small class="ml-1x">Android Developer</small></a></h3>
+        <div>Android开发从事者，热爱IT、喜欢新科技、爱玩数码。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+       
+    <div id="uyan_frame"></div>
+
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2017/11/20/01.Kotlin引入/" title="01_Kotlin引入"><i class="fa fa-angle-left" aria-hidden="true"></i>&nbsp;&nbsp;上一篇</a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2017/11/20/安卓知识回顾/" title="安卓知识回顾">下一篇&nbsp;&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning hidden-xs" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  
+  
+  <div class="bar-right">
+    <div class="share-component" data-sites="weibo,qq,wechat" data-mobile-sites="weibo,qq,qzone"></div>
+  </div>
+  
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-tit">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="donate-payimg">
+            <img src="/images/donate/alipayimg.png" alt="扫码支持" title="扫一扫" />
+          </div>
+          <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+          <div class="donate-payselect">
+            <div class="pay_item checked" data-id="alipay" data-src="/images/donate/alipayimg.png">
+              <div class="radio">
+                <input type="radio" name="payment" id="input-alipay" value="alipay" checked>
+                <label class="pay_logo clickable" for="input-alipay"><img src="/images/donate/alipay.jpg" alt="支付宝" /></label>
+              </div>
+            </div>
+            <div class="pay_item" data-id="weipay" data-src="/images/donate/weipayimg.png">
+              <div class="radio">
+                <input type="radio" name="payment" id="input-weipay" value="weipay">
+                <label class="pay_logo clickable" for="input-weipay"><img src="/images/donate/weipay.jpg" alt="微信支付" /></label>
+              </div>
+            </div>
+          </div>
+          <div class="text-grey">
+            <p>扫一扫，即可进行扫码打赏哦</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/qdafengzi" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="fa fa-github"></i></a></li>
+        
+        <li><a href="https://weibo.com/u/2323441364?is_all=1" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="fa fa-weibo"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="fa fa-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script src="/js/plugin.js"></script>
+<script src="/js/application.js"></script>
+  
+    
+    
+    
+        <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+    
+    
+    
+        
+<script defer src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+    
+    
+        
+    
+    <script defer type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=[object Object]"></script>
+
+
+    
+    
+
+
+
+</body>
+</html>
